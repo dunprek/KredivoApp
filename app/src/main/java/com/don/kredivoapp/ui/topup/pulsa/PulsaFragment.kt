@@ -1,11 +1,15 @@
 package com.don.kredivoapp.ui.topup.pulsa
 
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,8 +47,10 @@ class PulsaFragment : Fragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnClick
         viewModel = ViewModelProviders.of(this).get(PulsaViewModel::class.java)
         setupPulsa()
         setupPromo()
+        tv_mobile_number.setOnClickListener {
+            showEditText()
+        }
     }
-
 
     private fun setupPromo() {
         listPromos = viewModel.getPromos()
@@ -73,6 +79,23 @@ class PulsaFragment : Fragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnClick
         startActivity(intent)
     }
 
+
     override fun onClickView(item: TopUpEntity) {
     }
+
+    private fun showEditText() {
+        val dialog = Dialog(this.context!!)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) //before
+        dialog.setContentView(R.layout.dialog_edit_text)
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+
+        val etPhoneNumber = dialog.findViewById(R.id.et_phone_number) as EditText
+        val btnOk = dialog.findViewById(R.id.btn_ok) as Button
+        btnOk.setOnClickListener {
+            dialog.hide()
+        }
+    }
+
 }

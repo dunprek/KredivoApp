@@ -1,6 +1,11 @@
 package com.don.kredivoapp.base
 
+import android.app.Dialog
 import android.content.DialogInterface
+import android.view.View
+import android.view.Window
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -59,17 +64,20 @@ abstract class BaseActivity : AppCompatActivity() {
             showErrorAlert("Toolbar is not set")
         }
     }
+
     fun showErrorAlert(message: String) {
         val alertDialog = AlertDialog.Builder(this)
             .setTitle(R.string.alert_title)
             .setMessage(message)
-            .setPositiveButton(R.string.alert_close, DialogInterface.OnClickListener { dialog, which ->
-                if (message.contains("404")) {
+            .setPositiveButton(
+                R.string.alert_close,
+                DialogInterface.OnClickListener { dialog, which ->
+                    if (message.contains("404")) {
 //                        logout()
-                } else {
-                    dialog.dismiss()
-                }
-            })
+                    } else {
+                        dialog.dismiss()
+                    }
+                })
             .create()
         alertDialog.show()
 
@@ -81,5 +89,6 @@ abstract class BaseActivity : AppCompatActivity() {
         //set the color to the buttton
         pbutton.setTextColor(buttonColor)
     }
+
 
 }
