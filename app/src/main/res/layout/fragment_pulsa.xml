@@ -18,7 +18,7 @@
         android:paddingTop="@dimen/margin_size_16dp"
         android:paddingEnd="@dimen/margin_size_16dp"
         android:paddingBottom="@dimen/margin_size_16dp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_item"
+        app:layout_constraintBottom_toTopOf="@+id/rv_pulsa"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -55,25 +55,45 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_item"
+        android:id="@+id/rv_pulsa"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@id/ll_test"
+        android:layout_marginBottom="@dimen/margin_size_16dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_top_item"
-        android:layout_marginBottom="@dimen/margin_size_16dp"
         tools:listitem="@layout/item_list_price" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ll_test"
+    <LinearLayout
+        android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorGrey"
-        android:orientation="horizontal"
+        android:layout_height="220dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:layout_marginBottom="@dimen/margin_size_8dp"
+            android:text="Promos"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_promo"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_height="180dp"
+            tools:listitem="@layout/item_list_promo" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

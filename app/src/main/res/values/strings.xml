@@ -6,5 +6,10 @@
     <string name="label_title_pulsa">Pulsa</string>
     <string name="label_title_data_package">Data Package</string>
     <string name="label_nominal">Nominal :</string>
+    <string name="label_price">Rp %1$s</string>
+    <string name="label_valid_date">Valid Date</string>
+    <string name="label_voucher_code">Valid Date</string>
+    <string name="label_tc">Terms &amp; Conditions</string>
+    <string name="action_copy">Copy</string>
 
 </resources>

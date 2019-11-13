@@ -1,4 +1,4 @@
-package com.don.kredivoapp.topup
+package com.don.kredivoapp.ui.topup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.don.kredivoapp.R
-import com.don.kredivoapp.topup.datapackage.DataPackageFragment
-import com.don.kredivoapp.topup.pulsa.PulsaFragment
+import com.don.kredivoapp.ui.topup.datapackage.DataPackageFragment
+import com.don.kredivoapp.ui.topup.pulsa.PulsaFragment
 import com.google.android.material.tabs.TabLayout
 
 class TopUpActivity : AppCompatActivity() {

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.don.kredivoapp.ui.promo.PromoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_promo"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_directions"
+            app:layout_constraintDimensionRatio="16:8" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold"
+            tools:text="Discount Testing with some other stuff going on in here" />
+
+        <TextView
+            android:id="@+id/tv_label_valid_date"
+            style="@style/textLabelPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:text="@string/label_valid_date" />
+
+        <TextView
+            android:id="@+id/tv_valid_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_5dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            tools:text="8 - 31 Januari 2019" />
+
+        <TextView
+            android:id="@+id/tv_label_voucher_code"
+            style="@style/textLabelPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:text="@string/label_voucher_code" />
+
+        <LinearLayout
+            android:id="@+id/ll_voucher_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_size_48dp"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_5dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:background="@drawable/rectangle_border_grey"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="3"
+                android:background="@color/colorLightGrey"
+                android:fontFamily="@font/ave_bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_16"
+                tools:text="BIRTHDAY9" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrey" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_size_8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/ave_bold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/action_copy"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAccent" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_label_tc"
+            style="@style/textLabelPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:text="@string/label_tc" />
+
+        <TextView
+            android:id="@+id/tv_tc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_5dp"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            tools:text="Testing Term Conditions" />
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
