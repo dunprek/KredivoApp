@@ -12,45 +12,57 @@ object DataDummy {
     fun generateDummyPromo(): ArrayList<PromoEntity> {
         val promoEntities = arrayListOf<PromoEntity>()
         promoEntities.add(PromoEntity(
+            "001",
             "https://ecs7.tokopedia.net/img/blog/promo/2019/02/Kredivo_Maret_Feature-Image.jpg",
             "Discount 20% at Kedai Hape Original, Mall Kota Kasablanka",
             "10 - 31 Januari 2019",
             "BIRTHDAY9",
-            "&#8226; Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.\n" +
-                    "&#8226; Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%\n" +
-                    "&#8226; Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&T Express dan Ninja Xpress (REG dan FAST).\n" +
-                    "&#8226; Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo.\n" +
-                    "&#8226; Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar & pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).\n"))
+            "<ul>\n" +
+                    "<li>Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.</li>\n" +
+                    "<li>Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%</li>\n" +
+                    "<li>Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&amp;T Express dan Ninja Xpress (REG dan FAST)</li>\n" +
+                    "<li>Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo</li>\n" +
+                    "<li>Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar &amp; pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).</li>\n" +
+                    "</ul>"))
         promoEntities.add(PromoEntity(
+            "002",
             "https://ecs7.tokopedia.net/img/blog/promo/2019/04/Feature-Image-940x339-62.jpg",
             "Discount 20% at Kedai Hape Original, Mall Kota Kasablanka",
             "10 - 31 Januari 2019",
             "BIRTHDAY10",
-            "&#8226; Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.\n" +
-                    "&#8226; Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%\n" +
-                    "&#8226; Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&T Express dan Ninja Xpress (REG dan FAST).\n" +
-                    "&#8226; Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo.\n" +
-                    "&#8226; Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar & pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).\n"))
+            "<ul>\n" +
+                    "<li>Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.</li>\n" +
+                    "<li>Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%</li>\n" +
+                    "<li>Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&amp;T Express dan Ninja Xpress (REG dan FAST)</li>\n" +
+                    "<li>Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo</li>\n" +
+                    "<li>Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar &amp; pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).</li>\n" +
+                    "</ul>"))
         promoEntities.add(PromoEntity(
+            "003",
             "https://ecs7.tokopedia.net/img/blog/promo/2018/11/Feature-Image_940x339-1.jpg",
             "Discount 20% at Kedai Hape Original, Mall Kota Kasablanka",
             "10 - 31 Januari 2019",
             "BIRTHDAY11",
-            "&#8226; Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.\n" +
-                    "&#8226; Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%\n" +
-                    "&#8226; Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&T Express dan Ninja Xpress (REG dan FAST).\n" +
-                    "&#8226; Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo.\n" +
-                    "&#8226; Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar & pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).\n"))
+            "<ul>\n" +
+                    "<li>Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.</li>\n" +
+                    "<li>Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%</li>\n" +
+                    "<li>Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&amp;T Express dan Ninja Xpress (REG dan FAST)</li>\n" +
+                    "<li>Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo</li>\n" +
+                    "<li>Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar &amp; pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).</li>\n" +
+                    "</ul>"))
         promoEntities.add(PromoEntity(
+            "004",
             "https://ecs7.tokopedia.net/img/blog/promo/2019/09/OG_1200X630.jpg",
             "Discount 20% at Kedai Hape Original, Mall Kota Kasablanka",
             "10 - 31 Januari 2019",
             "BIRTHDAY12",
-            "&#8226; Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.\n" +
-                    "&#8226; Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%\n" +
-                    "&#8226; Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&T Express dan Ninja Xpress (REG dan FAST).\n" +
-                    "&#8226; Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo.\n" +
-                    "&#8226; Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar & pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).\n"))
+            "<ul>\n" +
+                    "<li>Promo Berlaku untuk transaksi yang dilakukan diaplikasi terbaru Bukalapak.</li>\n" +
+                    "<li>Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%</li>\n" +
+                    "<li>Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J&amp;T Express dan Ninja Xpress (REG dan FAST)</li>\n" +
+                    "<li>Setiap pengguna bisa menggunakan promo sebanyak 1(satu) kali per hari dan maksimal 2 (dua) kali selama periode Promo</li>\n" +
+                    "<li>Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game,listrik prabayar &amp; pascabayar, tiekt event, tiket pesawat, tiket kereta, pembayaran zakat online, pembayaran tagihan listrik, air PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).</li>\n" +
+                    "</ul>"))
         return promoEntities
     }
 

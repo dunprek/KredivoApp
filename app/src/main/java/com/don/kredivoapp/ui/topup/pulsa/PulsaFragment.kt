@@ -1,26 +1,26 @@
 package com.don.kredivoapp.ui.topup.pulsa
 
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import com.don.kredivoapp.data.PromoEntity
-import kotlinx.android.synthetic.main.fragment_pulsa.*
-import androidx.recyclerview.widget.PagerSnapHelper
 import com.don.kredivoapp.R
+import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.data.TopUpEntity
+import com.don.kredivoapp.ui.promo.PromoActivity
+import kotlinx.android.synthetic.main.fragment_pulsa.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class PulsaFragment : Fragment(),PromoAdapter.OnClickItem,PulsaAdapter.OnClickItem{
-
+class PulsaFragment : Fragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnClickItem {
 
 
     private lateinit var promoAdapter: PromoAdapter
@@ -28,7 +28,6 @@ class PulsaFragment : Fragment(),PromoAdapter.OnClickItem,PulsaAdapter.OnClickIt
     private lateinit var viewModel: PulsaViewModel
     private lateinit var listPromos: ArrayList<PromoEntity>
     private lateinit var listTopUp: ArrayList<TopUpEntity>
-
 
 
     override fun onCreateView(
@@ -47,16 +46,17 @@ class PulsaFragment : Fragment(),PromoAdapter.OnClickItem,PulsaAdapter.OnClickIt
     }
 
 
-    private fun setupPromo(){
+    private fun setupPromo() {
         listPromos = viewModel.getPromos()
         promoAdapter = PromoAdapter(listPromos, activity!!, this)
-        rv_promo.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL ,false)
+        rv_promo.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(rv_promo)
         rv_promo.setHasFixedSize(true)
         rv_promo.adapter = promoAdapter
     }
-    private fun setupPulsa(){
+
+    private fun setupPulsa() {
         listTopUp = viewModel.getPulsas()
         pulsaAdapter = PulsaAdapter(listTopUp, activity!!, this)
         rv_pulsa.layoutManager = LinearLayoutManager(context)
@@ -65,6 +65,12 @@ class PulsaFragment : Fragment(),PromoAdapter.OnClickItem,PulsaAdapter.OnClickIt
     }
 
     override fun onClickView(item: PromoEntity) {
+        val intent = Intent(activity, PromoActivity::class.java)
+        intent.putExtra(
+            PromoActivity.EXTRA_ID,
+            item.id
+        )
+        startActivity(intent)
     }
 
     override fun onClickView(item: TopUpEntity) {

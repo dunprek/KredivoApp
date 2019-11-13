@@ -8,8 +8,15 @@
     <string name="label_nominal">Nominal :</string>
     <string name="label_price">Rp %1$s</string>
     <string name="label_valid_date">Valid Date</string>
-    <string name="label_voucher_code">Valid Date</string>
+    <string name="label_voucher_code">Voucher Code</string>
     <string name="label_tc">Terms &amp; Conditions</string>
     <string name="action_copy">Copy</string>
+
+    <string name="alert_title">Error</string>
+    <string name="alert_close">Tutup</string>
+    <string name="alert_yes">Ya</string>
+    <string name="alert_no">Tidak</string>
+    <string name="title_promo">Merchant Promo</string>
+
 
 </resources>

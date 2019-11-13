@@ -6,6 +6,7 @@ package com.don.kredivoapp.data
  * Jakarta - Indonesia
  */
 data class PromoEntity (
+    var id: String?,
     var imageUrl: String?,
     var name: String?,
     var date: String?,
