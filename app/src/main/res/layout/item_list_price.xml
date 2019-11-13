@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/colorWhite"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/margin_size_16dp"
+        android:paddingEnd="0dp">
+
+        <TextView
+            android:id="@+id/tv_label_nominal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_nominal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_size_6dp"
+            tools:text="25.000"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <Button
+        style="@style/Button.Blue"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/margin_size_16dp"
+        tools:text="Rp 195.000"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold" />
+
+    <include
+        layout="@layout/view_line_default"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

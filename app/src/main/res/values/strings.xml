@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KredivoApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_title_pulsa">Pulsa</string>
+    <string name="label_title_data_package">Data Package</string>
+    <string name="label_nominal">Nominal :</string>
+
+</resources>

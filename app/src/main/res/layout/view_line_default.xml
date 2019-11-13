@@ -1,0 +1,4 @@
+<View android:background="@color/colorGrey"
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
