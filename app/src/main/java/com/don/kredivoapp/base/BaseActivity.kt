@@ -1,15 +1,18 @@
 package com.don.kredivoapp.base
 
-import android.app.Dialog
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.DialogInterface
-import android.view.View
-import android.view.Window
-import android.widget.Button
-import android.widget.EditText
+import android.content.Intent
+import android.database.Cursor
+import android.provider.ContactsContract
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.don.kredivoapp.R
+import com.don.kredivoapp.ui.topup.TopUpActivity
+import com.don.kredivoapp.utils.PhoneNumberUtils.checkPhoneNumber
 import com.google.android.material.snackbar.Snackbar
 
 /**
@@ -18,6 +21,8 @@ import com.google.android.material.snackbar.Snackbar
  * Jakarta - Indonesia
  */
 abstract class BaseActivity : AppCompatActivity() {
+
+
     fun showBackArrow() {
         val toolbar = supportActionBar
         if (toolbar != null) {
@@ -95,5 +100,33 @@ abstract class BaseActivity : AppCompatActivity() {
         Snackbar.make(findViewById(android.R.id.content), string, Snackbar.LENGTH_LONG)
             .show();
     }
+
+    fun runThread(context: Context) {
+        val background = object : Thread() {
+            override fun run() {
+
+                try {
+                    // Thread will sleep for 3 seconds
+                    Thread.sleep((2 * 1000).toLong())
+
+
+                    val intent = Intent(context, TopUpActivity::class.java)
+                    startActivity(intent)
+                    //Remove activity
+                    finish()
+
+                } catch (e: Exception) {
+
+                }
+
+            }
+        }
+
+        // start thread
+        background.start()
+    }
+
+
+
 
 }

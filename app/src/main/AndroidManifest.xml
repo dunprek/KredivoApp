@@ -4,6 +4,7 @@
     package="com.don.kredivoapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.promo.PromoActivity"></activity>
         <activity
             android:name=".ui.topup.TopUpActivity"
-            android:windowSoftInputMode="adjustNothing|stateHidden">
+            android:windowSoftInputMode="adjustNothing|stateHidden" />
+        <activity android:name=".ui.promo.PromoActivity" />
+        <activity android:name=".ui.initial.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
