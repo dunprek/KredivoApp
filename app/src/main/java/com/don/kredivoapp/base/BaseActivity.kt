@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.don.kredivoapp.R
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * Created by gideon on 13,November,2019
@@ -90,5 +91,9 @@ abstract class BaseActivity : AppCompatActivity() {
         pbutton.setTextColor(buttonColor)
     }
 
+    fun showSnackBar(string: String) {
+        Snackbar.make(findViewById(android.R.id.content), string, Snackbar.LENGTH_LONG)
+            .show();
+    }
 
 }
