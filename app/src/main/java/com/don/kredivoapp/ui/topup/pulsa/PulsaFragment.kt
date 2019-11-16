@@ -1,17 +1,12 @@
 package com.don.kredivoapp.ui.topup.pulsa
 
 
-import android.annotation.SuppressLint
-import android.app.Activity.RESULT_OK
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
-import android.database.Cursor
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,13 +35,13 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
     private lateinit var viewModel: PulsaViewModel
     private lateinit var listPromos: ArrayList<PromoEntity>
     private lateinit var listTopUp: ArrayList<TopUpEntity>
-    private val RESULT_PICK_CONTACT = 1
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        context?.theme?.applyStyle(R.style.colorControlRippleBlue, true); //blue ripple color
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pulsa, container, false)
     }
@@ -56,9 +51,11 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
         viewModel = ViewModelProviders.of(this).get(PulsaViewModel::class.java)
         setupPulsa()
         setupPromo()
+
         tv_mobile_number.setOnClickListener {
             showEditText(context!!)
         }
+
         iv_close.setOnClickListener {
             tv_mobile_number.text = ""
             iv_close.visibility = View.INVISIBLE
@@ -67,7 +64,7 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
         }
 
         btn_contact.setOnClickListener {
-            getAllContact()
+            getContactPulsa()
         }
     }
 
@@ -98,7 +95,6 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
         startActivity(intent)
     }
 
-
     override fun onClickView(item: TopUpEntity) {
     }
 
@@ -124,7 +120,7 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
                             firstFourDigits,
                             iv_pulsa,
                             rv_pulsa,
-                            constraint_pulsa
+                            cl_pulsa
                         )
 //                        Log.d(TAG, firstFourDigits)
                     } catch (e: Exception) {
@@ -152,64 +148,4 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK) {
-            // Check for the request code, we might be usign multiple startActivityForReslut
-            when (requestCode) {
-                RESULT_PICK_CONTACT -> contactPicked(data!!)
-            }
-        } else {
-            Log.e("MainActivity", "Failed to pick contact")
-        }
-    }
-
-    private fun getAllContact() {
-        val contactPickerIntent = Intent(
-            Intent.ACTION_PICK,
-            ContactsContract.CommonDataKinds.Phone.CONTENT_URI
-        )
-        startActivityForResult(contactPickerIntent, RESULT_PICK_CONTACT)
-    }
-
-    @SuppressLint("Recycle")
-    private fun contactPicked(data: Intent): String {
-        var cursor: Cursor? = null
-        var phoneNo: String = ""
-
-        try {
-            var name: String? = null
-            // getData() method will have the Content Uri of the selected contact
-            val uri = data.data
-            //Query the content uri
-            cursor = this.activity?.contentResolver?.query(uri!!, null, null, null, null)
-            cursor!!.moveToFirst()
-            // column index of the phone number
-            val phoneIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
-            // column index of the contact name
-            val nameIndex =
-                cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
-            phoneNo = cursor.getString(phoneIndex)
-            name = cursor.getString(nameIndex)
-            // Set the value to the textviews
-
-            phoneNo = phoneNo!!.replace("+62", "0")
-            phoneNo = phoneNo.replace("-", "")
-            phoneNo = phoneNo.replace(" ", "")
-            tv_mobile_number.text = phoneNo
-            iv_close.visibility = View.VISIBLE
-            phoneNo = phoneNo.substring(0, Math.min(phoneNo.length, 4))
-            checkPhoneNumber(
-                context!!,
-                phoneNo,
-                iv_pulsa,
-                rv_pulsa,
-                constraint_pulsa
-            )
-        } catch (e: Exception) {
-            e.printStackTrace()
-            phoneNo = ""
-        }
-        return phoneNo
-    }
 }

@@ -41,5 +41,8 @@
         <item name="android:foreground">?selectableItemBackgroundBorderless</item>
     </style>
 
+    <style name="colorControlRippleBlue">
+        <item name="colorControlHighlight">@color/colorLightBlue</item>
+    </style>
 
 </resources>

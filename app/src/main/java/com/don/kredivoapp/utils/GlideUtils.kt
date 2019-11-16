@@ -10,7 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.don.kredivoapp.R
 
 /**
- * Created by gideon on 13,November,2019
+ * Created by gideon on 19,November,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
@@ -26,6 +26,7 @@ object GlideUtils {
         try {
             Glide.with(context)
                 .load(url)
+                .thumbnail(0.1f)
                 .apply(options)
                 .into(iv)
         } catch (e: Exception) {
@@ -39,7 +40,9 @@ object GlideUtils {
     fun glideCircle(context: Context, imageName: String?, iv: ImageView) {
         val requestOptions = RequestOptions()
         val options =
-            requestOptions.circleCrop().fitCenter()
+            requestOptions
+                .placeholder(R.mipmap.ic_launcher)
+                .circleCrop().fitCenter()
 
         try {
             Glide.with(context)
@@ -50,6 +53,7 @@ object GlideUtils {
                             "drawable",
                             context.packageName)
                 )
+                .thumbnail(0.1f)
                 .apply(options)
                 .into(iv)
         } catch (e: Exception) {

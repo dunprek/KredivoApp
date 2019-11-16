@@ -63,6 +63,7 @@
         android:layout_marginBottom="@dimen/margin_size_16dp"
         app:layout_constraintBottom_toTopOf="@id/ll_bottom"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_top_item"
         tools:listitem="@layout/item_list_price" />
@@ -70,7 +71,7 @@
     <LinearLayout
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="200dp"
         android:background="@color/colorWhite"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,10 +92,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_promo_data"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/margin_size_16dp"
             android:layout_height="180dp"
+            android:layout_marginStart="@dimen/margin_size_16dp"
             tools:listitem="@layout/item_list_promo" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 

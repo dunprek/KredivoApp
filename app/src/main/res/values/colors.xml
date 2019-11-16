@@ -8,4 +8,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBackgroundOne">#E4E8F6</color>
     <color name="colorTextLabel">#BBBBBB</color>
+    <color name="colorLightBlue">#2D2196F3</color>
 </resources>

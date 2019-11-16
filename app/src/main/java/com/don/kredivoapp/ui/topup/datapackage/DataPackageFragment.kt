@@ -33,6 +33,8 @@ class DataPackageFragment : Fragment(), DataPackageAdapter.OnClickItem, PromoAda
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        context?.theme?.applyStyle(R.style.colorControlRippleBlue, true); //blue ripple color
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_data_package, container, false)
     }
