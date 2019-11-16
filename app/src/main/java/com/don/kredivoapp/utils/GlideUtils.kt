@@ -20,7 +20,7 @@ object GlideUtils {
         val requestOptions = RequestOptions()
         val options =
             requestOptions
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(android.R.drawable.screen_background_dark)
                 .transforms(FitCenter(), RoundedCorners(4))
 
         try {
@@ -41,7 +41,7 @@ object GlideUtils {
         val requestOptions = RequestOptions()
         val options =
             requestOptions
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(android.R.drawable.screen_background_dark)
                 .circleCrop().fitCenter()
 
         try {
@@ -53,6 +53,27 @@ object GlideUtils {
                             "drawable",
                             context.packageName)
                 )
+                .thumbnail(0.1f)
+                .apply(options)
+                .into(iv)
+        } catch (e: Exception) {
+            Glide.with(context)
+                .load(R.mipmap.ic_launcher)
+                .into(iv)
+        }
+
+    }
+
+    fun glideNoRoundedCorners(context: Context, url: String?, iv: ImageView) {
+        val requestOptions = RequestOptions()
+        val options =
+            requestOptions
+                .placeholder(android.R.drawable.screen_background_dark)
+                .transforms(FitCenter())
+
+        try {
+            Glide.with(context)
+                .load(url)
                 .thumbnail(0.1f)
                 .apply(options)
                 .into(iv)

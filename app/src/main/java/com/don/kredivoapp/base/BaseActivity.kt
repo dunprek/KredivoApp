@@ -1,18 +1,13 @@
 package com.don.kredivoapp.base
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.database.Cursor
-import android.provider.ContactsContract
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.don.kredivoapp.R
 import com.don.kredivoapp.ui.topup.TopUpActivity
-import com.don.kredivoapp.utils.PhoneNumberUtils.checkPhoneNumber
 import com.google.android.material.snackbar.Snackbar
 
 /**
@@ -47,6 +42,7 @@ abstract class BaseActivity : AppCompatActivity() {
         val toolbar = supportActionBar
         if (toolbar != null) {
             toolbar.title = title
+            toolbar.elevation = 0f
 
         } else {
             showErrorAlert("Toolbar is not set")
@@ -125,8 +121,6 @@ abstract class BaseActivity : AppCompatActivity() {
         // start thread
         background.start()
     }
-
-
 
 
 }

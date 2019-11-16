@@ -41,7 +41,7 @@ class PromoActivity : BaseActivity() {
 
     private fun populateDetail(promoEntity: PromoEntity?) {
         if (promoEntity != null) {
-            GlideUtils.glideWithPlaceHolder(this@PromoActivity, promoEntity.imageUrl, iv_promo)
+            GlideUtils.glideNoRoundedCorners(this@PromoActivity, promoEntity.imageUrl, iv_promo)
             tv_name.text = promoEntity.name
             tv_valid_date.text = promoEntity.date
             tv_voucher_code.text = promoEntity.code
