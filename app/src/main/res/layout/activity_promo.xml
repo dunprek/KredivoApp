@@ -19,7 +19,8 @@
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             android:src="@drawable/ic_directions"
-            app:layout_constraintDimensionRatio="16:8" />
+            app:layout_constraintDimensionRatio="16:8"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -101,7 +102,8 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:text="@string/action_copy"
                 android:textAllCaps="true"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                tools:ignore="UnusedAttribute" />
 
 
         </LinearLayout>

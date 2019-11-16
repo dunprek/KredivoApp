@@ -79,8 +79,8 @@ object DataDummy {
 
     fun generateDummyDataPackage(): ArrayList<TopUpEntity> {
         val topUpEntities = arrayListOf<TopUpEntity>()
-        topUpEntities.add(TopUpEntity(100,25000.0,25000.0,"1 GB bonus Pulsa Rp 2000"))
-        topUpEntities.add(TopUpEntity(101,50000.0,50000.0,"2 GB bonus Pulsa Rp 5000"))
+        topUpEntities.add(TopUpEntity(100,25000.0,25000.0,"1 GB\n\nbonus Pulsa Rp 2000"))
+        topUpEntities.add(TopUpEntity(101,50000.0,50000.0,"2 GB\n\nbonus Pulsa Rp 5000"))
         topUpEntities.add(TopUpEntity(102,100000.0,100000.0,"5GB/bulan"))
         topUpEntities.add(TopUpEntity(103,150000.0,150000.0,"10GB/bulan"))
         topUpEntities.add(TopUpEntity(104,195000.0,200000.0,"25GB/bulan"))

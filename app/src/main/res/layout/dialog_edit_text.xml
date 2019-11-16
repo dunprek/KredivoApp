@@ -27,7 +27,7 @@
         android:imeOptions="actionDone"
         android:inputType="phone"
         android:maxLength="13"
-        tools:ignore="TextFields" />
+        tools:ignore="Autofill,TextFields" />
 
     <Button
         android:id="@+id/btn_ok"

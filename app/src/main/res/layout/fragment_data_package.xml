@@ -1,57 +1,101 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_data"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
     android:background="@color/colorBackgroundOne"
+    android:fitsSystemWindows="false"
     android:orientation="vertical">
 
 
     <LinearLayout
         android:id="@+id/ll_top_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/margin_size_100dp"
         android:background="@color/colorWhite"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:orientation="horizontal"
         android:paddingStart="@dimen/margin_size_16dp"
         android:paddingTop="@dimen/margin_size_16dp"
         android:paddingEnd="@dimen/margin_size_16dp"
         android:paddingBottom="@dimen/margin_size_16dp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_pulsa"
+        app:layout_constraintBottom_toTopOf="@+id/rv_data_package"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
-            android:id="@+id/iv"
+            android:id="@+id/iv_data_package"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="@dimen/margin_size_8dp"
-            android:background="@color/colorAccent" />
+            android:background="@drawable/rectangle_border_white"
+            android:visibility="invisible"
+            tools:ignore="ContentDescription" />
+
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_size_16dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_label_mobile_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobile number" />
+                android:layout_marginStart="@dimen/margin_size_16dp"
+                android:text="@string/label_mobile_number"
+                app:layout_constraintLeft_toRightOf="@+id/iv"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawableRight="@drawable/ic_close" />
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_mobile_data"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="@dimen/margin_size_16dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    app:layout_constraintLeft_toRightOf="@+id/iv"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_label_mobile_number"
+                    tools:text="081297066926" />
+
+                <ImageView
+                    android:id="@+id/iv_close_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:background="@drawable/ic_close"
+                    android:padding="@dimen/margin_size_8dp"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <Button
+                    android:id="@+id/btn_contact_data"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ic_contacts"
+                    android:gravity="bottom"
+                    android:padding="@dimen/margin_size_8dp" />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/view_line_default"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="@dimen/margin_size_16dp"
+                android:layout_marginEnd="@dimen/margin_size_48dp" />
+
         </LinearLayout>
-
-        <Button
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/ic_contacts" />
-
 
     </LinearLayout>
 
@@ -61,9 +105,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="@dimen/margin_size_16dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/ll_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_top_item"
         tools:listitem="@layout/item_list_price" />
@@ -84,7 +128,7 @@
             android:layout_marginStart="@dimen/margin_size_16dp"
             android:layout_marginTop="@dimen/margin_size_16dp"
             android:layout_marginBottom="@dimen/margin_size_8dp"
-            android:text="Promos"
+            android:text="@string/label_promos"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -92,7 +136,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_promo_data"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin_size_16dp"
             tools:listitem="@layout/item_list_promo" />
     </LinearLayout>

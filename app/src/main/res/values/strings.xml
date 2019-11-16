@@ -20,6 +20,7 @@
     <string name="label_mobile_number">Mobile Number</string>
     <string name="label_hint_phone_number">081234567890</string>
     <string name="action_ok">Ok</string>
+    <string name="label_promos">Promos</string>
 
 
 </resources>

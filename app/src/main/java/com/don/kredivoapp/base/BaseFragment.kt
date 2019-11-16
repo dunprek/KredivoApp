@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.don.kredivoapp.utils.PhoneNumberUtils
 import com.don.kredivoapp.utils.PrefUtils
+import kotlinx.android.synthetic.main.fragment_data_package.*
 import kotlinx.android.synthetic.main.fragment_pulsa.*
 
 /**
@@ -22,8 +23,11 @@ import kotlinx.android.synthetic.main.fragment_pulsa.*
  */
 abstract class BaseFragment : Fragment() {
 
-    private val RESULT_PICK_CONTACT_PULSA = 1
-    private val RESULT_PICK_CONTACT_DATA_PACKAGE = 2
+    companion object{
+        private const val RESULT_PICK_CONTACT_PULSA = 1
+        private const val RESULT_PICK_CONTACT_DATA = 2
+    }
+
 
     fun hideSoftKeyboard() {
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -34,9 +38,10 @@ abstract class BaseFragment : Fragment() {
         if (resultCode == Activity.RESULT_OK) {
             // Check for the request code, we might be usign multiple startActivityForResult
             when (requestCode) {
-                RESULT_PICK_CONTACT_PULSA -> {
+                RESULT_PICK_CONTACT_PULSA ->
                     contactPulsaPicked(data!!)
-                }
+                RESULT_PICK_CONTACT_DATA ->
+                    contactDataPick(data!!)
             }
         } else {
             Log.e("PulsaFragment", "Failed to pick contact")
@@ -51,6 +56,13 @@ abstract class BaseFragment : Fragment() {
         startActivityForResult(contactPickerIntent, RESULT_PICK_CONTACT_PULSA)
     }
 
+    fun getContactData() {
+        val contactPickerIntent = Intent(
+            Intent.ACTION_PICK,
+            ContactsContract.CommonDataKinds.Phone.CONTENT_URI
+        )
+        startActivityForResult(contactPickerIntent, RESULT_PICK_CONTACT_DATA)
+    }
 
     @SuppressLint("Recycle")
     private fun contactPulsaPicked(data: Intent) {
@@ -94,5 +106,46 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
+    @SuppressLint("Recycle")
+    private fun contactDataPick(data: Intent) {
+
+        val cursor: Cursor?
+        var phoneNo: String
+
+        try {
+//            val name: String
+            // getData() method will have the Content Uri of the selected contact
+            val uri = data.data
+            //Query the content uri
+            cursor = this.activity?.contentResolver?.query(uri!!, null, null, null, null)
+            cursor!!.moveToFirst()
+            // column index of the phone number
+            val phoneIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+            // column index of the contact name
+//            val nameIndex =
+//                cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
+            phoneNo = cursor.getString(phoneIndex)
+//            name = cursor.getString(nameIndex)
+            // Set the value to the textviews
+
+            phoneNo = phoneNo.replace("+62", "0")
+            phoneNo = phoneNo.replace("-", "")
+            phoneNo = phoneNo.replace(" ", "")
+
+
+            tv_mobile_data.text = phoneNo
+            iv_close_data.visibility = View.VISIBLE
+            phoneNo = phoneNo.substring(0, Math.min(phoneNo.length, 4))
+            PhoneNumberUtils.checkPhoneNumber(
+                context!!,
+                phoneNo,
+                iv_data_package,
+                rv_data_package,
+                constraint_data
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
 }
