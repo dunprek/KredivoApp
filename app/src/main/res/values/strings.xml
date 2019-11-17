@@ -22,5 +22,9 @@
     <string name="action_ok">Ok</string>
     <string name="label_promos">Promos</string>
 
+    <string name="label_notification_otp">OTP is not needed for first transaction of the day that is less than Rp 200,000</string>
+    <string name="label_loan_agreement">By continuing, I agree with loan agreement of Kredivo</string>
+    <string name="label_pay">pay</string>
+
 
 </resources>

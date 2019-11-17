@@ -41,6 +41,15 @@
         <item name="android:foreground">?selectableItemBackgroundBorderless</item>
     </style>
 
+    <style name="Button.Orange" parent="android:Theme">
+        <item name="android:background">@drawable/rectangle_button_orange</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+    </style>
+
     <style name="colorControlRippleBlue">
         <item name="colorControlHighlight">@color/colorLightBlue</item>
     </style>

@@ -3,10 +3,14 @@
     <color name="colorPrimary">#2087E6</color>
     <color name="colorPrimaryDark">#1E70BB</color>
     <color name="colorAccent">#FA6F30</color>
+    <color name="colorOrange">#FF6A2B</color>
     <color name="colorGrey">#AFAFAF</color>
     <color name="colorLightGrey">#F9F9F9</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBackgroundOne">#E4E8F6</color>
     <color name="colorTextLabel">#BBBBBB</color>
     <color name="colorLightBlue">#2D2196F3</color>
+    <color name="colorLightYellow">#FFFC81</color>
+    <color name="colorDarkGrey">#F4F1F4</color>
+    <color name="colorBackground">#FEFBFE</color>
 </resources>
