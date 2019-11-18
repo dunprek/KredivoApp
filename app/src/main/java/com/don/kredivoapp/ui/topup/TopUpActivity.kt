@@ -7,11 +7,12 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.don.kredivoapp.R
+import com.don.kredivoapp.base.BaseActivity
 import com.don.kredivoapp.ui.topup.datapackage.DataPackageFragment
 import com.don.kredivoapp.ui.topup.pulsa.PulsaFragment
 import com.google.android.material.tabs.TabLayout
 
-class TopUpActivity : AppCompatActivity() {
+class TopUpActivity : BaseActivity() {
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager
 
@@ -19,6 +20,7 @@ class TopUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top_up)
+        setToolbarTitle("Top Up")
         tabLayout = findViewById(R.id.tabs_example)
         viewPager = findViewById(R.id.viewpager_example)
         setupViewPager(viewPager)

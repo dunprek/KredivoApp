@@ -24,7 +24,16 @@
 
     <string name="label_notification_otp">OTP is not needed for first transaction of the day that is less than Rp 200,000</string>
     <string name="label_loan_agreement">By continuing, I agree with loan agreement of Kredivo</string>
+    <string name="label_support">Invoice has been emailed to you\nHave problem? Email us at support@kredivo.com</string>
     <string name="label_pay">pay</string>
+    <string name="label_ok">ok</string>
+    <string name="label_payment_detail">Payment Details</string>
+    <string name="label_admin_fee">Admin fee</string>
+    <string name="label_kredivo_pin">Kredivo PIN</string>
+    <string name="label_pin">PIN</string>
+    <string name="label_order_detail">Order Details</string>
+    <string name="label_status">Status</string>
+    <string name="label_order_id">Order ID</string>
 
 
 </resources>

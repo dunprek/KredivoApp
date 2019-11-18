@@ -8,6 +8,7 @@ import kotlinx.android.parcel.Parcelize
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
+@Parcelize
 data class OrderMdl(
     var orderId: String?,
     var orderStatus: String?,
@@ -18,4 +19,4 @@ data class OrderMdl(
     var adminFee: Double,
     var total: Double,
     var paymentMethod: String?
-)
+):Parcelable

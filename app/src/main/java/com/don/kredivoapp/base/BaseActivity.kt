@@ -3,6 +3,7 @@ package com.don.kredivoapp.base
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.view.Gravity
 import android.widget.EditText
@@ -52,7 +53,18 @@ abstract class BaseActivity : AppCompatActivity() {
         if (toolbar != null) {
             toolbar.title = title
             toolbar.elevation = 0f
+        } else {
+            showErrorAlert("Toolbar is not set")
+        }
+    }
 
+    fun setToolbarClose(title: String) {
+        val toolbar = supportActionBar
+        if (toolbar != null) {
+            toolbar.title = title
+            toolbar.elevation = 0f
+            toolbar.setDisplayHomeAsUpEnabled(true)
+            toolbar.setHomeAsUpIndicator(R.drawable.ic_close)
         } else {
             showErrorAlert("Toolbar is not set")
         }

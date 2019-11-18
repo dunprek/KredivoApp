@@ -35,7 +35,7 @@ class ConfirmationViewModel : ViewModel() {
                     pulsaEntity.price,
                     0.0,
                     pulsaEntity.price!!,
-                    "pulsa")
+                    "30 days")
             }
 
         }

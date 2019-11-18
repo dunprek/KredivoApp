@@ -1,16 +1,17 @@
 package com.don.kredivoapp.ui.confirmation
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.don.kredivoapp.R
 import com.don.kredivoapp.base.BaseActivity
 import com.don.kredivoapp.data.OrderMdl
+import com.don.kredivoapp.ui.paymentdetails.PaymentDetailsActivity
 import com.don.kredivoapp.utils.GlideUtils
 import com.don.kredivoapp.utils.SnackBarUtils
 import kotlinx.android.synthetic.main.activity_confirmation.*
@@ -20,6 +21,7 @@ class ConfirmationActivity : BaseActivity() {
     companion object {
         const val EXTRA_ITEM = "extra_item"
         const val EXTRA_FROM = "extra_from"
+        const val EXTRA_OBJECT = "extra_object"
     }
 
     private var confirmationMdl: OrderMdl? = null
@@ -32,6 +34,8 @@ class ConfirmationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmation)
+        showBackArrow()
+        setToolbarTitle("Loan Confirmation")
 
         //declare view model
         viewModel = ViewModelProviders.of(this)
@@ -72,18 +76,27 @@ class ConfirmationActivity : BaseActivity() {
 
         btn_pay.setOnClickListener {
             if (checkET(et_pin)) {
-                confirmationMdl?.orderStatus = "success"
-                val intent = Intent(this, ConfirmationActivity::class.java)
-//                intent.putExtra(EXTRA_OBJECT, confirmationMdl)
+                val intent = Intent(this, PaymentDetailsActivity::class.java)
+                intent.putExtra(EXTRA_OBJECT, confirmationMdl)
                 startActivity(intent)
+                finish()
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setSpannable() {
         val spannable = SpannableString(getString(R.string.label_loan_agreement))
         spannable.setSpan(
-            ForegroundColorSpan(Color.BLUE),
+            ForegroundColorSpan(resources.getColor(R.color.colorDarkBlue)),
             28, 53,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
@@ -95,9 +108,14 @@ class ConfirmationActivity : BaseActivity() {
             tv_mobile_number.text = orderMdl.phoneNumber
             GlideUtils.glideCircle(this@ConfirmationActivity, orderMdl.image, iv_pulsa)
             tv_pulsa_name.text = orderMdl.type
+            tv_method.text = orderMdl.paymentMethod
             tv_price.text = formatRupiah(orderMdl.price)
             tv_admin_fee.text = formatRupiah(orderMdl.adminFee)
             tv_total_price.text = formatRupiah(orderMdl.total)
+
+
+            confirmationMdl = orderMdl
+            confirmationMdl?.orderStatus = "Success"
         }
     }
 

@@ -54,8 +54,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/ave_medium"
                     android:text="@string/label_mobile_number"
                     android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
                     app:layout_constraintLeft_toRightOf="@+id/iv"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,7 +106,7 @@
                         android:fontFamily="@font/ave_medium"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
-                        android:text="Payment Details"
+                        android:text="@string/label_payment_detail"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/text_size_16"
                         android:textStyle="bold" />
@@ -125,16 +127,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/ave_medium"
                             android:gravity="start"
-                            android:text="Paket Data Indosat 3G" />
+                            tools:text="Paket Data Indosat 3G"/>
 
                         <TextView
                             android:id="@+id/tv_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/ave_medium"
                             android:gravity="end"
-                            android:text="Rp 210.000" />
+                            tools:text="Rp 210.000" />
 
 
                     </LinearLayout>
@@ -152,16 +156,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/ave_medium"
                             android:gravity="start"
-                            android:text="Admin fee" />
+                            android:text="@string/label_admin_fee" />
 
                         <TextView
                             android:id="@+id/tv_admin_fee"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/ave_medium"
                             android:gravity="end"
-                            android:text="Rp 0" />
+                            tools:text="Rp 0" />
 
 
                     </LinearLayout>
@@ -183,12 +189,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_method"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="@font/ave_medium"
                             android:gravity="start"
-                            android:text="Pay in 30 days"
+                            tools:text="Pay in 30 days"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size_16"
                             android:textStyle="bold" />
@@ -200,7 +207,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ave_medium"
                             android:gravity="end"
-                            android:text="Rp 500.000"
+                            tools:text="Rp 500.000"
                             android:textColor="@color/colorOrange"
                             android:textSize="@dimen/text_size_16"
                             android:textStyle="bold" />
@@ -235,7 +242,7 @@
                         android:fontFamily="@font/ave_medium"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
-                        android:text="Kredivo PIN"
+                        android:text="@string/label_kredivo_pin"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/text_size_16"
                         android:textStyle="bold" />
@@ -247,8 +254,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_size_16dp"
                         android:layout_marginTop="@dimen/margin_size_16dp"
+                        android:fontFamily="@font/ave_medium"
                         android:gravity="start"
-                        android:text="PIN" />
+                        android:text="@string/label_pin" />
 
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -264,7 +272,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberPassword"
-                            android:maxLength="6" />
+                            android:maxLength="6"
+                            tools:ignore="Autofill,LabelFor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -278,6 +287,7 @@
                         android:layout_marginEnd="@dimen/margin_size_16dp"
                         android:layout_marginBottom="@dimen/margin_size_16dp"
                         android:gravity="start"
+                        android:textSize="@dimen/text_size_12"
                         android:text="@string/label_loan_agreement"
                         android:textColor="@android:color/darker_gray" />
 

@@ -2,6 +2,7 @@ package com.don.kredivoapp.ui.promo
 
 import android.os.Bundle
 import android.text.Html
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProviders
 import com.don.kredivoapp.R
 import com.don.kredivoapp.base.BaseActivity
@@ -47,5 +48,12 @@ class PromoActivity : BaseActivity() {
             tv_voucher_code.text = promoEntity.code
             tv_tc.text = Html.fromHtml(promoEntity.tc)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
