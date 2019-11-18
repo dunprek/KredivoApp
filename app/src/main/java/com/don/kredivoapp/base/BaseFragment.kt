@@ -8,8 +8,6 @@ import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.don.kredivoapp.utils.PhoneNumberUtils
 import com.don.kredivoapp.utils.PrefUtils
@@ -23,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_pulsa.*
  */
 abstract class BaseFragment : Fragment() {
 
-    companion object{
+    companion object {
         private const val RESULT_PICK_CONTACT_PULSA = 1
         private const val RESULT_PICK_CONTACT_DATA = 2
     }
@@ -92,6 +90,9 @@ abstract class BaseFragment : Fragment() {
 
 
             tv_mobile_number.text = phoneNo
+
+            PrefUtils.savePhoneNumber(context!!, phoneNo)
+
             iv_close.visibility = View.VISIBLE
             phoneNo = phoneNo.substring(0, Math.min(phoneNo.length, 4))
             PhoneNumberUtils.checkPhoneNumber(
@@ -134,6 +135,7 @@ abstract class BaseFragment : Fragment() {
 
 
             tv_mobile_data.text = phoneNo
+            PrefUtils.savePhoneNumber(context!!, phoneNo)
             iv_close_data.visibility = View.VISIBLE
             phoneNo = phoneNo.substring(0, Math.min(phoneNo.length, 4))
             PhoneNumberUtils.checkPhoneNumber(

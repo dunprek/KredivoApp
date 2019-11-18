@@ -19,10 +19,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.don.kredivoapp.R
 import com.don.kredivoapp.base.BaseFragment
+import com.don.kredivoapp.data.OrderMdl
 import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.data.TopUpEntity
+import com.don.kredivoapp.ui.confirmation.ConfirmationActivity
 import com.don.kredivoapp.ui.promo.PromoActivity
 import com.don.kredivoapp.utils.PhoneNumberUtils.checkPhoneNumber
+import com.don.kredivoapp.utils.PrefUtils
 import kotlinx.android.synthetic.main.fragment_pulsa.*
 
 
@@ -96,6 +99,16 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
     }
 
     override fun onClickView(item: TopUpEntity) {
+        val intent = Intent(activity, ConfirmationActivity::class.java)
+        intent.putExtra(
+            ConfirmationActivity.EXTRA_FROM,
+            "PULSA"
+        )
+        intent.putExtra(
+            ConfirmationActivity.EXTRA_ITEM,
+            item.id.toString()
+        )
+        startActivity(intent)
     }
 
     private fun showEditText(context: Context) {
@@ -127,6 +140,9 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
                     }
                 }
                 tv_mobile_number.text = etPhoneNumber.text.toString().trim()
+
+                PrefUtils.savePhoneNumber(context,etValue)
+
                 if (etValue.length >= 1) {
                     iv_close.visibility = View.VISIBLE
                 } else {

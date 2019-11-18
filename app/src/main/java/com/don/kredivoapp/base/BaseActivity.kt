@@ -4,13 +4,20 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.text.TextUtils
+import android.view.Gravity
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.don.kredivoapp.R
 import com.don.kredivoapp.ui.topup.TopUpActivity
 import com.google.android.material.snackbar.Snackbar
+import java.text.NumberFormat
+import java.util.*
+
+
+
 
 /**
  * Created by gideon on 20,November,2019
@@ -94,9 +101,20 @@ abstract class BaseActivity : AppCompatActivity() {
         pbutton.setTextColor(buttonColor)
     }
 
+
     fun showSnackBar(string: String) {
         Snackbar.make(findViewById(android.R.id.content), string, Snackbar.LENGTH_LONG)
-            .show();
+            .show()
+    }
+
+    fun showTopSnackBar(string: String) {
+        val snackBar =
+            Snackbar.make(findViewById(android.R.id.content), string, Snackbar.LENGTH_LONG)
+        val view = snackBar.view
+        val params = view.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.CENTER_HORIZONTAL or Gravity.TOP
+        view.layoutParams = params
+        snackBar.show()
     }
 
     fun runThread(context: Context) {
@@ -124,14 +142,21 @@ abstract class BaseActivity : AppCompatActivity() {
         background.start()
     }
 
-    fun checkET(editText: EditText, message: String): Boolean {
+    fun checkET(editText: EditText): Boolean {
         return if (TextUtils.isEmpty(editText.text.toString().trim())) {
-            showSnackBar(message)
+            showTopSnackBar(" Pin tidak boleh kosong")
             false
         } else {
-            showSnackBar(message)
             true
         }
     }
 
+    fun formatRupiah(money: Double?): String {
+        val local = Locale("id", "id")
+        val formatter = NumberFormat
+            .getCurrencyInstance(local)
+        formatter.maximumFractionDigits = 0
+        formatter.isParseIntegerOnly = true
+        return formatter.format((money))
+    }
 }

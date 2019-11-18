@@ -21,9 +21,11 @@ import com.don.kredivoapp.R
 import com.don.kredivoapp.base.BaseFragment
 import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.data.TopUpEntity
+import com.don.kredivoapp.ui.confirmation.ConfirmationActivity
 import com.don.kredivoapp.ui.promo.PromoActivity
 import com.don.kredivoapp.ui.topup.pulsa.PromoAdapter
 import com.don.kredivoapp.utils.PhoneNumberUtils
+import com.don.kredivoapp.utils.PrefUtils
 import kotlinx.android.synthetic.main.fragment_data_package.*
 
 /**
@@ -96,6 +98,16 @@ class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem, DataPackag
     }
 
     override fun onClickView(item: TopUpEntity) {
+        val intent = Intent(activity, ConfirmationActivity::class.java)
+        intent.putExtra(
+            ConfirmationActivity.EXTRA_FROM,
+            "DATA_PACKAGE"
+        )
+        intent.putExtra(
+            ConfirmationActivity.EXTRA_ITEM,
+            item.id.toString()
+        )
+        startActivity(intent)
     }
 
     private fun showEditText(context: Context) {
@@ -127,6 +139,8 @@ class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem, DataPackag
                     }
                 }
                 tv_mobile_data.text = etPhoneNumber.text.toString().trim()
+                PrefUtils.savePhoneNumber(context,etValue)
+
                 if (etValue.length >= 1) {
                     iv_close_data.visibility = View.VISIBLE
                 } else {

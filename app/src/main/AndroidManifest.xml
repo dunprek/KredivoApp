@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.confirmation.ConfirmationActivity"
-            android:exported="true"/>
+        <activity android:name=".ui.paymentdetails.PaymentDetailsActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".ui.confirmation.ConfirmationActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.topup.TopUpActivity"
             android:windowSoftInputMode="adjustNothing|stateHidden" />
