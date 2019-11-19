@@ -32,18 +32,23 @@ class PaymentDetailsActivity : BaseActivity() {
 
         setupView(confirmationMdl)
 
-        tv_support.setOnClickListener{
-//            showSnackBar("Menuju Support")
+        tv_support.setOnClickListener {
+            //            showSnackBar("Menuju Support")
             val emailIntent = Intent(
                 Intent.ACTION_SENDTO, Uri.fromParts(
                     "mailto", "support@kredivo.com", null
                 )
             )
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Body")
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Mohon Bantuan Mengenai")
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Ini test Isi ")
             startActivity(Intent.createChooser(emailIntent, "Send email..."))
         }
 
+        btn_pay.setOnClickListener {
+            val intent = Intent(this, TopUpActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
     }
 
     private fun setSpannable() {
@@ -59,8 +64,8 @@ class PaymentDetailsActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
-                finish()
                 val intent = Intent(this, TopUpActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }
         }
@@ -72,7 +77,7 @@ class PaymentDetailsActivity : BaseActivity() {
             tv_mobile_number.text = orderMdl.phoneNumber
             GlideUtils.glideCircle(this@PaymentDetailsActivity, orderMdl.image, iv_payment)
             tv_status.text = orderMdl.orderStatus
-            tv_order_id.text = "KB-" + orderMdl.orderId
+            tv_order_id.text = formatCode(orderMdl.orderId)
             tv_type.text = orderMdl.type
             tv_payment_method.text = orderMdl.paymentMethod
             tv_price.text = formatRupiah(orderMdl.price)
@@ -80,6 +85,4 @@ class PaymentDetailsActivity : BaseActivity() {
             tv_total_price.text = formatRupiah(orderMdl.total)
         }
     }
-
-
 }

@@ -31,7 +31,8 @@ import kotlinx.android.synthetic.main.fragment_data_package.*
 /**
  * A simple [Fragment] subclass.
  */
-class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem, DataPackageAdapter.OnClickItem {
+class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem,
+    DataPackageAdapter.OnClickItem {
     private lateinit var promoAdapter: PromoAdapter
     private lateinit var pulsaAdapter: DataPackageAdapter
     private lateinit var viewModel: DataPackageViewModel
@@ -73,7 +74,8 @@ class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem, DataPackag
     private fun setupPromo() {
         listPromos = viewModel.getPromos()
         promoAdapter = PromoAdapter(listPromos, activity!!, this)
-        rv_promo_data.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        rv_promo_data.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(rv_promo_data)
         rv_promo_data.setHasFixedSize(true)
@@ -139,7 +141,7 @@ class DataPackageFragment : BaseFragment(), PromoAdapter.OnClickItem, DataPackag
                     }
                 }
                 tv_mobile_data.text = etPhoneNumber.text.toString().trim()
-                PrefUtils.savePhoneNumber(context,etValue)
+                PrefUtils.savePhoneNumber(context, etValue)
 
                 if (etValue.length >= 1) {
                     iv_close_data.visibility = View.VISIBLE

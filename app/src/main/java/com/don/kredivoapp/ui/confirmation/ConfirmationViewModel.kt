@@ -9,7 +9,7 @@ import org.apache.commons.lang3.RandomStringUtils
 import java.util.*
 
 /**
- * Created by gideon on 17,November,2019
+ * Created by gideon on 19,November,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
@@ -35,14 +35,15 @@ class ConfirmationViewModel : ViewModel() {
                     pulsaEntity.price,
                     0.0,
                     pulsaEntity.price!!,
-                    "30 days")
+                    "30 days"
+                )
             }
 
         }
         return orderMdl
     }
 
-    fun getDataPackageOrder(context: Context):OrderMdl? {
+    fun getDataPackageOrder(context: Context): OrderMdl? {
         for (i in 0 until DataDummy.generateDummyDataPackage().size) {
             val dataEntity = DataDummy.generateDummyDataPackage()[i]
             if (dataEntity.id.toString() == selectedId) {
@@ -55,7 +56,8 @@ class ConfirmationViewModel : ViewModel() {
                     dataEntity.price,
                     0.0,
                     dataEntity.price!!,
-                    "30 days")
+                    "30 days"
+                )
             }
         }
         return orderMdl

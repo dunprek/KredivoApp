@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
 /**
- * Created by gideon on 16,November,2019
+ * Created by gideon on 19,November,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
@@ -19,7 +19,7 @@ class PrefUtils {
 
 
         fun saveImageName(context: Context, printerName: String) {
-           val editor = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE).edit()
+            val editor = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE).edit()
             editor.putString(PREF_IMAGE_NAME, printerName)
                 .apply()
         }

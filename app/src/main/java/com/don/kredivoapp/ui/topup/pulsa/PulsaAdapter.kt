@@ -29,7 +29,7 @@ class PulsaAdapter(
         var tvAmount: TextView =
             itemView.findViewById(R.id.tv_amount) as TextView
 
-        var constraintLayout:ConstraintLayout = itemView.findViewById(R.id.constraint_pulsa)
+        var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.constraint_pulsa)
         var btnPrice: Button = itemView.findViewById(R.id.btn_price) as Button
     }
 
@@ -54,7 +54,7 @@ class PulsaAdapter(
         holder.constraintLayout.setOnClickListener {
             onClickItem.onClickView(item)
         }
-        holder.btnPrice.setOnClickListener{
+        holder.btnPrice.setOnClickListener {
             onClickItem.onClickView(item)
         }
     }

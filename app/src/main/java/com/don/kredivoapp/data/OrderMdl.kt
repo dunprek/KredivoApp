@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 /**
- * Created by gideon on 17,November,2019
+ * Created by gideon on 19,November,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
@@ -19,4 +19,4 @@ data class OrderMdl(
     var adminFee: Double,
     var total: Double,
     var paymentMethod: String?
-):Parcelable
+) : Parcelable

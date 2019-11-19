@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.don.kredivoapp.R
 import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.utils.GlideUtils
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.don.kredivoapp.R
 
 
 /**

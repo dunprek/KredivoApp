@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.paymentdetails.PaymentDetailsActivity"
-            android:exported="true"></activity>
+        <activity
+            android:name=".ui.paymentdetails.PaymentDetailsActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.confirmation.ConfirmationActivity"
             android:exported="true" />
@@ -23,7 +24,9 @@
             android:name=".ui.topup.TopUpActivity"
             android:windowSoftInputMode="adjustNothing|stateHidden" />
         <activity android:name=".ui.promo.PromoActivity" />
-        <activity android:name=".ui.initial.SplashActivity">
+        <activity
+            android:name=".ui.initial.SplashActivity"
+            android:theme="@style/AppNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

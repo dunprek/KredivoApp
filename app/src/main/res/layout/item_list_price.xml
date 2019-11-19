@@ -53,7 +53,6 @@
         tools:text="Rp 195.000" />
 
 
-
     <include
         layout="@layout/view_line_default"
         android:layout_width="match_parent"

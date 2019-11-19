@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.don.kredivoapp.R
 import com.don.kredivoapp.base.BaseFragment
-import com.don.kredivoapp.data.OrderMdl
 import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.data.TopUpEntity
 import com.don.kredivoapp.ui.confirmation.ConfirmationActivity
@@ -141,7 +140,7 @@ class PulsaFragment : BaseFragment(), PromoAdapter.OnClickItem, PulsaAdapter.OnC
                 }
                 tv_mobile_number.text = etPhoneNumber.text.toString().trim()
 
-                PrefUtils.savePhoneNumber(context,etValue)
+                PrefUtils.savePhoneNumber(context, etValue)
 
                 if (etValue.length >= 1) {
                     iv_close.visibility = View.VISIBLE

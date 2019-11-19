@@ -42,7 +42,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorDarkGrey"
-                        android:fontFamily="@font/ave_medium"
+                        android:fontFamily="@font/proxima_regular"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
                         android:text="@string/label_order_detail"
@@ -79,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_size_16dp"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:textSize="@dimen/text_size_18"
                             tools:text="@string/label_mobile_number" />
 
@@ -102,7 +102,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             android:text="@string/label_status" />
 
@@ -111,7 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             android:textColor="@color/colorDarkGreen"
                             tools:text="Success" />
@@ -132,7 +132,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             android:text="@string/label_order_id" />
 
@@ -141,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="KB-8027de03" />
 
@@ -172,7 +172,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorDarkGrey"
-                        android:fontFamily="@font/ave_medium"
+                        android:fontFamily="@font/proxima_regular"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
                         android:text="@string/label_payment_detail"
@@ -196,7 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             tools:text="Paket Data Indosat 3G" />
 
@@ -205,7 +205,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="Rp 210.000" />
 
@@ -225,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             android:text="@string/label_admin_fee" />
 
@@ -234,7 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="Rp 0" />
 
@@ -262,7 +262,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size_16"
@@ -274,7 +274,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             android:textColor="@color/colorOrange"
                             android:textSize="@dimen/text_size_16"

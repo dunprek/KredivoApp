@@ -3,7 +3,6 @@ package com.don.kredivoapp.utils
 import android.content.Context
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -51,7 +50,8 @@ object GlideUtils {
                         .getIdentifier(
                             imageName,
                             "drawable",
-                            context.packageName)
+                            context.packageName
+                        )
                 )
                 .thumbnail(0.1f)
                 .apply(options)

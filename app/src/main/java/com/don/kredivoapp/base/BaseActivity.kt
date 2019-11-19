@@ -3,7 +3,6 @@ package com.don.kredivoapp.base
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.view.Gravity
 import android.widget.EditText
@@ -16,8 +15,6 @@ import com.don.kredivoapp.ui.topup.TopUpActivity
 import com.google.android.material.snackbar.Snackbar
 import java.text.NumberFormat
 import java.util.*
-
-
 
 
 /**
@@ -70,6 +67,9 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
+    fun formatCode(string: String?): String {
+        return String.format(resources.getString(R.string.label_order_code), string)
+    }
 
     fun setToolbarTitle(
         tvTitle: TextView,

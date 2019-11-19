@@ -5,7 +5,7 @@ package com.don.kredivoapp.data
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
-data class PromoEntity (
+data class PromoEntity(
     var id: String?,
     var imageUrl: String?,
     var name: String?,

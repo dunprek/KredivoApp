@@ -1,5 +1,8 @@
 package com.don.kredivoapp.ui.promo
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
 import android.text.Html
 import android.view.MenuItem
@@ -9,6 +12,7 @@ import com.don.kredivoapp.base.BaseActivity
 import com.don.kredivoapp.data.PromoEntity
 import com.don.kredivoapp.utils.GlideUtils
 import kotlinx.android.synthetic.main.activity_promo.*
+
 
 class PromoActivity : BaseActivity() {
     companion object {
@@ -37,6 +41,13 @@ class PromoActivity : BaseActivity() {
 
         populateDetail(viewModel.getPromo())
 
+        btn_copy.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("label", tv_voucher_code.text.toString().trim())
+            clipboard.setPrimaryClip(clip)
+            showTopSnackBar("Promo Code Copied")
+        }
+
     }
 
 
@@ -51,8 +62,8 @@ class PromoActivity : BaseActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            android.R.id.home->finish()
+        when (item.itemId) {
+            android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
     }

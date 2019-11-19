@@ -7,6 +7,7 @@
     <string name="label_title_data_package">Data Package</string>
     <string name="label_nominal">Nominal :</string>
     <string name="label_price">Rp %1$s</string>
+    <string name="label_order_code">KB-%1$s</string>
     <string name="label_valid_date">Valid Date</string>
     <string name="label_voucher_code">Voucher Code</string>
     <string name="label_tc">Terms &amp; Conditions</string>

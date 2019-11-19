@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * Created by gideon on 14,November,2019
+ * Created by gideon on 19,November,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */

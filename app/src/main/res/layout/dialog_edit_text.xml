@@ -34,6 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_size_16dp"
+        android:background="@drawable/rectangle_button_orange"
+        android:textColor="@color/colorWhite"
         android:text="@string/action_ok" />
 
 </LinearLayout>

@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_size_16dp"
-                    android:fontFamily="@font/ave_medium"
+                    android:fontFamily="@font/proxima_regular"
                     android:text="@string/label_mobile_number"
                     android:textSize="@dimen/text_size_18"
                     android:textStyle="bold"
@@ -103,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorDarkGrey"
-                        android:fontFamily="@font/ave_medium"
+                        android:fontFamily="@font/proxima_regular"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
                         android:text="@string/label_payment_detail"
@@ -127,16 +127,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
-                            tools:text="Paket Data Indosat 3G"/>
+                            tools:text="Paket Data Indosat 3G" />
 
                         <TextView
                             android:id="@+id/tv_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="Rp 210.000" />
 
@@ -156,7 +156,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             android:text="@string/label_admin_fee" />
 
@@ -165,7 +165,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="Rp 0" />
 
@@ -193,7 +193,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="start"
                             tools:text="Pay in 30 days"
                             android:textColor="@android:color/black"
@@ -205,7 +205,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/ave_medium"
+                            android:fontFamily="@font/proxima_regular"
                             android:gravity="end"
                             tools:text="Rp 500.000"
                             android:textColor="@color/colorOrange"
@@ -239,7 +239,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/colorDarkGrey"
-                        android:fontFamily="@font/ave_medium"
+                        android:fontFamily="@font/proxima_regular"
                         android:gravity="start"
                         android:padding="@dimen/margin_size_20dp"
                         android:text="@string/label_kredivo_pin"
@@ -254,7 +254,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_size_16dp"
                         android:layout_marginTop="@dimen/margin_size_16dp"
-                        android:fontFamily="@font/ave_medium"
+                        android:fontFamily="@font/proxima_regular"
                         android:gravity="start"
                         android:text="@string/label_pin" />
 

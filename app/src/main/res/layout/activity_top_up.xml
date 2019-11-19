@@ -10,7 +10,6 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_example"
             android:layout_width="match_parent"
